@@ -20,6 +20,7 @@
 </head>
 
 <body class="container" style="background-color: #d9d9d9;">
+    <br>
     <h1>API WIDGETS</h1>
     <div x-data="{
         sentence: '',
@@ -39,7 +40,6 @@
                 });
         },
 
-        error:'',
         bill: '',
         total:0,
         totalBill(){
@@ -49,10 +49,6 @@
                     console.log(result.data)
                     
                     this.total = result.data.total
-
-                    if(!this.bill){
-                        this.error = result.data.error
-                    }
                     
                 })
         },
@@ -81,13 +77,13 @@
             </div>
             <div style="background-color: #495057; margin-top: 10px; padding: 1em;">
                 <div>
-                    Longest word: <strong><span x-text="longestWord"></span></strong> 
+                    Longest word: <strong><span x-text="longestWord"></span></strong>
                 </div>
                 <div>
-                    Shortest word: <strong><span x-text="shortestWord"></span></strong> 
+                    Shortest word: <strong><span x-text="shortestWord"></span></strong>
                 </div>
                 <div>
-                    Word count: <strong><span x-text="wordCount"></span></strong> 
+                    Word count: <strong><span x-text="wordCount"></span></strong>
                 </div>
             </div>
         </div>
@@ -103,9 +99,8 @@
                 </div>
                 <div style="background-color: #495057; margin-top: 10px; padding: 1em;">
                     Your phone bill is: <strong><span x-text="total"></span></strong>
-                    <span x-text="error"></span>   
                 </div>
-                
+
             </div>
         </div>
         <br>
@@ -127,6 +122,7 @@
         </div>
 
     </div>
+    <br><br>
 
 </body>
 
